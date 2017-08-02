@@ -9,14 +9,22 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+    <script language="JavaScript">
+        function showWait() {
+
+        }
+    </script>
 </head>
 <body>
-    <div>
+    <div id="inputUrl">
         @using (Html.BeginForm("GetPreview", "Home", FormMethod.Get))
         {
             <input type="text" name="txtUrl" id="txtUrl" />
-            <button type="submit">OK</button>
+            <button type="submit" onclick="document.getElementById('inputUrl').style.display = 'none'; document.getElementById('loading').style.display=''">OK</button>
         }
+    </div>
+    <div id="loading" style="display:none">
+        正在解析视频真实地址,可能需要1~2分钟,请耐心等待...
     </div>
 </body>
 </html>
